@@ -1,3 +1,6 @@
+.idea
+terget
+*.iml
 # Compiled class file
 *.class
 
