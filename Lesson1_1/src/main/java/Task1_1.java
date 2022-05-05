@@ -7,6 +7,7 @@ public class Task1_1 {
                 count ++;
             }
         }
+        System.out.println("1234");
         System.out.println("number " + count);
 
     }
