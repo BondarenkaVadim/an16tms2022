@@ -29,9 +29,9 @@ public class HomeWorks_2 {
      * 2. Дополнительно: сделать проверку если сумма a и b больше чем максимальное значение int то вернуть -1
      **/
     public static int sum(int a, int b) {
-        long test_A = a;
-        long test_B = b;
-        if ((test_A + test_B) > Integer.MAX_VALUE){
+        long testA = a;
+        long testB = b;
+        if ((testA + testB) > Integer.MAX_VALUE){
             return -1;
         } else {
             return a + b;
@@ -56,8 +56,9 @@ public class HomeWorks_2 {
     public static int max(int a, int b) {
         if (a > b) {
             return a;
-        } else
+        } else {
             return b;
+        }
     }
 
     /**
