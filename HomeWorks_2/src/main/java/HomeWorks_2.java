@@ -29,12 +29,13 @@ public class HomeWorks_2 {
      * 2. Дополнительно: сделать проверку если сумма a и b больше чем максимальное значение int то вернуть -1
      **/
     public static int sum(int a, int b) {
-        long test_a = a;
-        long test_b = b;
-        if ((test_a + test_b) > Integer.MAX_VALUE){
-            return -1;}
-        else
-        return a+b;
+        long test_A = a;
+        long test_B = b;
+        if ((test_A + test_B) > Integer.MAX_VALUE){
+            return -1;
+        } else {
+            return a + b;
+        }
     }
 
     /**
@@ -53,9 +54,9 @@ public class HomeWorks_2 {
      * Метод должен вернуть 10
      */
     public static int max(int a, int b) {
-        if (a>b)
-        return a;
-        else
+        if (a > b) {
+            return a;
+        } else
             return b;
     }
 
@@ -73,6 +74,6 @@ public class HomeWorks_2 {
      * return 20
      */
     public static double calculateHypotenuse(int a, int b) {
-        return (Math.sqrt(a*a+b*b));
+        return Math.sqrt(a*a+b*b);
     }
 }
