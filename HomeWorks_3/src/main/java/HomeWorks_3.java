@@ -3,8 +3,8 @@ import java.util.Scanner;
 
 public class HomeWorks_3 {
     public static void main(String[] args) {
-        //englishLitters();
-        //parityСheck();
+        englishLitters();
+        parityСheck();
         modulNambers();
     }
 
