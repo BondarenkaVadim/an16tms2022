@@ -6,6 +6,17 @@ public class HomeWorks_3 {
         englishLitters();
         parityСheck();
         modulNambers();
+
+
+        final int max = 28800;
+        final int rnd = rnd(max);
+        System.out.println("В секундах " + rnd);
+        System.out.println("В часах " + rnd / 60 / 60);
+
+
+        int[] temp = {1, 2, 30, 4, 11};
+        System.out.println("average array" + average(temp));
+        System.out.println("max array " + max(temp));
     }
 
     public static void englishLitters() {
@@ -54,4 +65,27 @@ public class HomeWorks_3 {
     }
 
 
+    public static int rnd(int max) {
+        return (int) (Math.random() * ++max);
+    }
+
+    public static double average(int[] array) {
+        double srednee = 0;
+        for (int i = 0; i < array.length; i++) {
+            srednee = srednee + array[i];
+        }
+        return (srednee / array.length);
+    }
+
+
+    public static int max(int[] array) {
+        int maxNamber = array[0];
+        for (int i = 0; i < array.length; i++) {
+            if (maxNamber < array[i]) {
+                maxNamber = array[i];
+            }
+        }
+        return (maxNamber);
+
+    }
 }
