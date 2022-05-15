@@ -1,6 +1,7 @@
 import java.util.Arrays;
 import java.util.Random;
 
+
 public class Lesson4 {
     public static void main(String[] args) {
 
@@ -49,13 +50,39 @@ public class Lesson4 {
         */
         System.out.println("___________");
         kr();
+        System.out.println("___________");
+        int i = 100;
+        int j = 200;
+        while (i != j) {
+            ++i;
+            --j;
+        }
+        System.out.println(i + " " + j);
+        System.out.println("-------------------");
+        //или
+    /*    while (true) {
+            i++
+            j--
+            if (i == j) {
+                break;
+            }
+        }
+        //__________ или
+        while (!(++i == --j )){
+            System.out.println(i + " " + j);
+        }*/
 
+
+        int value = 0;
+        System.out.println("ggg");
+        Scanner
     }
 
     public static void kr() {
         for (int i = 0; i <= 100; i += 5) //{
             // if (i % 5 == 0) {
             System.out.print(i + " ");
+        System.out.println("");
         //  } вывести числа кратные 5 оптимальной итерации
 
     }
