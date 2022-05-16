@@ -1,13 +1,104 @@
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
 public class HomeWorks4 {
     public static void main(String[] args) {
-        operatorSwitch();
-        cellDivision();
-        namber();
-        zodiacSign();
+        //operatorSwitch();
+        //cellDivision();
+        //namber();
+        //zodiacSign();
+        //dinamicArray();
+        //consoleOperation();
+        //printPrimeNumbers();
+        countDevs();
 
+
+    }
+
+    public static void countDevs() {
+        Scanner console = new Scanner(System.in);
+        int namber = console.nextInt();
+        int rez = namber % 10;
+        if (rez == 0 || (rez >= 5 && rez <= 9)) {
+            System.out.println(namber + " Programmistov");
+        } else {
+            if ((rez > 1) && (rez < 5)) {
+                System.out.println(namber + " Programmista");
+            } else {
+                if (rez == 1)
+                    System.out.println(namber + " Programmist");
+            }
+        }
+    }
+
+    public static void printPrimeNumbers() {
+        int[] array = new int[1000];
+        for (int i = 0; i < 1000; i++) {
+            array[i] = i;
+        }
+        for (int i = 0; i < 1000; i++) {
+            for (int j = 2; j < 1000; j++) {
+
+                if ((array[i] % j != 0) || array[i] == j) {
+                    array[i] = array[i];
+                } else {
+                    array[i] = 0;
+                }
+            }
+        }
+        for (int i = 0; i < 1000; i++) {
+            if ((array[i] != 0) && array[i] != 1)
+                System.out.print(array[i] + " ");
+        }
+        // System.out.println(Arrays.toString(array));
+    }
+
+    private static void consoleOperation() {
+        Scanner console = new Scanner(System.in);
+        int namber = console.nextInt();
+        System.out.println(operation(namber) + " " + namber);
+    }
+
+    public static int operation(int number) {
+        int a = number;
+        if (number > 0) {
+            return number + 1;
+        } else {
+            return number - 2;
+        }
+        // тут пишем логику
+    }
+
+    private static void dinamicArray() {
+        int valueNamber = 0;
+        Scanner console = new Scanner(System.in);
+        System.out.println("Etnet for namber");
+        valueNamber = getEnteredValueFromConsoleNamber(console);
+        int[] array = new int[valueNamber];
+        Random random = new Random();
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextInt(100);
+        }
+        System.out.println(Arrays.toString(array));
+
+    }
+
+    private static int getEnteredValueFromConsoleNamber(Scanner console) {
+        int value = 0;
+        do {
+            if (console.hasNextInt()) {
+                value = console.nextInt();
+            } else {
+                System.out.println("Entered not a number");
+                console.next();
+            }
+            if (value < 1) {
+                System.out.println("Namber entered incorrectly");
+            }
+        } while (value < 1);
+
+        return value;
     }
 
 
