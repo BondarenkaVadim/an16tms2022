@@ -20,44 +20,38 @@ public class HomeWorks_3 {
     }
 
     public static void englishLitters() {
-        char litters;
-        for (int i = 97; i < 123; i++) {
-            litters = (char) i;
-            System.out.println(litters);
-        }
-        for (int i = 65; i < 91; i++) {
-            litters = (char) i;
-            System.out.println(litters);
+        for (char i = 65; i < 123; i++) {
+            if ((i >= 91) && (i <= 96))
+                continue;
+            System.out.println(i);
         }
     }
 
     public static void parityСheck() {
         Scanner console = new Scanner(System.in);
-        String str = console.nextLine();
-        if ((str.contains(".")) || (str.contains(","))) {
-            System.out.println("VVedeno nevernoe chislo");
+        //String str = console.nextLine();
 
-        } else {
-
-            int namber = Integer.parseInt(str);
+        if (console.hasNextInt()) {
+            int namber = console.nextInt();
             if (namber % 2 == 0) {
                 System.out.println("Chislo chetnoe");
             } else {
                 System.out.println("Chislo ne chetnoe");
             }
+        } else {
+            System.out.println("VVedeno nevernoe chislo");
         }
-
     }
 
     public static void modulNambers() {
         Scanner console = new Scanner(System.in);
         double[] arrayDouble = new double[3];
         for (int i = 0; i < 3; i++) {
-            arrayDouble[i] = console.nextDouble();
+            arrayDouble[i] = Math.abs(console.nextDouble());
         }
         double modulMin = arrayDouble[0];
         for (int i = 1; i < 3; i++) {
-            if (Math.abs(modulMin) > Math.abs(arrayDouble[i])) {
+            if (modulMin > arrayDouble[i]) {
                 modulMin = arrayDouble[i];
             }
         }
@@ -70,11 +64,11 @@ public class HomeWorks_3 {
     }
 
     public static double average(int[] array) {
-        double srednee = 0;
+        double avegrage = 0;
         for (int i = 0; i < array.length; i++) {
-            srednee = srednee + array[i];
+            avegrage = avegrage + array[i];
         }
-        return (srednee / array.length);
+        return (avegrage / array.length);
     }
 
 
@@ -85,7 +79,7 @@ public class HomeWorks_3 {
                 maxNamber = array[i];
             }
         }
-        return (maxNamber);
+        return maxNamber;
 
     }
 }
