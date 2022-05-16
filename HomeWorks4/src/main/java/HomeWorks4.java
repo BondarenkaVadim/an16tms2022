@@ -47,13 +47,13 @@ public class HomeWorks4 {
         if (console.hasNextInt()) {
             int i = console.nextInt();
             int num = Math.abs(i);
-            int num_ = (int) Math.log10(num) + 1; // это если логорифмический подход
+            int numFinal = (int) Math.log10(num) + 1; // это если логорифмический подход
             // так же можно со string
             //int length = String.valueOf(num).length();
             if (i > 0) {
-                System.out.println("Positive number " + num_);
+                System.out.println("Positive number " + numFinal);
             } else {
-                System.out.println("Negative namber " + num_);
+                System.out.println("Negative namber " + numFinal);
             }
         } else {
             System.out.println("error");
@@ -63,87 +63,90 @@ public class HomeWorks4 {
 
     private static void zodiacSign() {
         Scanner console = new Scanner(System.in);
-        int value_month = 0;
-        int value_day = 0;
+        int valueMonth = 0;
+        int valueDay = 0;
+        //2 boolean MonthCheck = false;
 
-        System.out.println("Enter for day");
-        value_day = getEnteredValueFromConsoleDay(console);
+
         System.out.println("Etnet for Month");
-        value_month = getEnteredValueFromConsoleMonth(console);
+        valueMonth = getEnteredValueFromConsoleMonth(console);
+        System.out.println("Enter for day");
+        valueDay = getEnteredValueFromConsoleDay(console);
 
-        switch (value_month) {
+        //  MonthCheck = getEnteredValueFromConsoleMonthCheck(valueDay, valueMonth);
+        switch (valueMonth) {
             case 1:
-                if (value_day <= 20) {
+                if (valueDay <= 20) {
                     System.out.println("Kozerog");
                 } else {
                     System.out.println("Vodolei");
                 }
                 break;
             case 2:
-                if (value_day <= 19) {
+                if (valueDay <= 19) {
                     System.out.println("Vodolei");
                 } else {
                     System.out.println("Ribi");
                 }
                 break;
             case 3:
-                if (value_day <= 20) {
+                if (valueDay <= 20) {
                     System.out.println("Ribi");
                 } else {
                     System.out.println("Oven");
                 }
                 break;
             case 4:
-                if (value_day <= 20) {
+                if (valueDay <= 20) {
                     System.out.println("Oven");
                 } else {
                     System.out.println("Telec");
                 }
                 break;
             case 5:
-                if (value_day <= 21) {
+                if (valueDay <= 21) {
                     System.out.println("Telec");
                 } else {
                     System.out.println("Bliznec");
                 }
                 break;
             case 6:
-                if (value_day <= 21) {
+                if (valueDay <= 21) {
                     System.out.println("Bliznec");
                 } else {
                     System.out.println("Rak");
                 }
                 break;
             case 7:
-                if (value_day <= 22) {
+                if (valueDay <= 22) {
                     System.out.println("Rak");
                 } else {
                     System.out.println("Leon");
                 }
                 break;
             case 8:
-                if (value_day <= 21) {
+                if (valueDay <= 21) {
                     System.out.println("Leon");
                 } else {
                     System.out.println("Deva");
                 }
                 break;
             case 9:
-                if (value_day <= 23) {
+                if (valueDay <= 23) {
                     System.out.println("Deva");
                 } else {
                     System.out.println("Vesi");
                 }
                 break;
             case 10:
-                if (value_day <= 23) {
+                if (valueDay <= 23) {
                     System.out.println("Vesi");
                 } else {
                     System.out.println("Scorpion");
                 }
                 break;
             case 11:
-                if (value_day <= 23) {
+                if (valueDay <= 23) {
                     System.out.println("Scorpion");
                 } else {
                     System.out.println("Strelec");
@@ -151,14 +154,15 @@ public class HomeWorks4 {
                 break;
 
             case 12:
-                if (value_day <= 22) {
+                if (valueDay <= 22) {
                     System.out.println("Strelec");
                 } else {
-                    System.out.println("Kozerog1");
+                    System.out.println("Kozerog");
                 }
                 break;
         }
     }
+
 
     private static int getEnteredValueFromConsoleDay(Scanner console) {
         int value = 0;
@@ -167,8 +171,13 @@ public class HomeWorks4 {
             if (console.hasNextInt()) {
                 value = console.nextInt();
             } else {
+                System.out.println("Entered not a number");
                 console.next();
             }
+            if ((value < 1) || (value > 31)) {
+                System.out.println("Day entered incorrectly");
+            }
+
         } while (value < 1 || value > 31);
         return value;
     }
@@ -180,10 +189,13 @@ public class HomeWorks4 {
             if (console.hasNextInt()) {
                 value = console.nextInt();
             } else {
-                System.out.println("Error");
+                System.out.println("Entered not a number");
                 console.next();
             }
-        } while (value < 1 || value > 13);
+            if ((value < 1) || (value > 12)) {
+                System.out.println("Month entered incorrectly");
+            }
+        } while (value < 1 || value > 12);
 
         return value;
     }
