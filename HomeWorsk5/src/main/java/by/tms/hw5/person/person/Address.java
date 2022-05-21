@@ -1,6 +1,6 @@
-package HomeWorsk5.src.main.java.by.tms.hw5.person.person;
+package by.tms.hw5.person.person;
 
-public class Addres {
+public class Address {
 
     public String country;
     public String city;
