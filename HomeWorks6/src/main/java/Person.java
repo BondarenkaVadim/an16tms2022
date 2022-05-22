@@ -4,6 +4,10 @@ public class Person {
     private String sex;
     private Address adress;
 
+    public Person() {
+
+    }
+
     public String getName() {
         return name;
     }
@@ -53,4 +57,6 @@ public class Person {
                 ", adress=" + adress +
                 '}';
     }
+
+
 }
