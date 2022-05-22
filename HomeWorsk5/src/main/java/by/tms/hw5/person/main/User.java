@@ -3,12 +3,12 @@ package by.tms.hw5.person.main;
 public class User {
 
 
-    public String firstName;
+    private String firstName;
 
-    public String lastName;
-    public int age;
-    public String sex;
-    public String condition;
+    private String lastName;
+    private int age;
+    private String sex;
+    private String condition;
 
     @Override
     public String toString() {
@@ -25,29 +25,40 @@ public class User {
 
     }
 
-    User(int s) {
+    public String conditionExamination (int s) {
         this.age = s;
         if (s >= 30) {
             condition = "Old";
+            return "Old";
         } else {
             condition = "Young";
-
+            return "Young";
         }
     }
+    User (int s){
+            this.age = s;
+            if (s >= 30) {
+                condition = "Old";
+            } else {
+                condition = "Young";
+            }
+        }
 
-    User(String s) {
+    User(String s, int ageI) {
 
-        User u = new User(20); //если 20 лет то девочка, молодая
-        if (u.age <= 25) {
+       // User u = new User(20); //если 20 лет то девочка, молодая
+        if (ageI <= 25) {
+
             this.sex = s;
-            this.age = u.age;
+            this.age = ageI;
             this.lastName = "Vera";
             this.firstName = "Ivanova";
-            this.condition = u.condition;
+
+            this.condition = conditionExamination(ageI);
         } else {
             this.sex = "Men";
-            this.age = u.age;
-            this.condition = u.condition;
+            this.age = getAge();
+            this.condition = condition;
             this.lastName = "Igor";
             this.firstName = "Ivanov";
         }
@@ -56,12 +67,52 @@ public class User {
 
     @Deprecated
     public void fullLastName() {   // изменениие имени на польное
-        if (this.lastName == "Dima") {
+        if (this.lastName.equals("Dima")) {
             this.lastName = "Dmitii";
         }
     }
 
-    public void ageIncrease() {   // увеличение возраста на 1
+    public void increaseAge() {   // увеличение возраста на 1
         this.age = this.age + 1;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getCondition() {
+        return condition;
+    }
+
+    public void setCondition(String condition) {
+        this.condition = condition;
     }
 }

@@ -4,10 +4,10 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Computer {
-    public String cpu;
-    public String ram;
-    public String ssd;
-    public int cycleResource = 10;
+    private String cpu;
+    private String ram;
+    private String ssd;
+    private int cycleResource;
 
     @Override
     public String toString() {
@@ -32,5 +32,37 @@ public class Computer {
             System.out.println("Computer destroyed");
 
         }
+    }
+
+    public String getCpu() {
+        return cpu;
+    }
+
+    public void setCpu(String cpu) {
+        this.cpu = cpu;
+    }
+
+    public String getRam() {
+        return ram;
+    }
+
+    public void setRam(String ram) {
+        this.ram = ram;
+    }
+
+    public String getSsd() {
+        return ssd;
+    }
+
+    public void setSsd(String ssd) {
+        this.ssd = ssd;
+    }
+
+    public int getCycleResource() {
+        return cycleResource;
+    }
+
+    public void setCycleResource(int cycleResource) {
+        this.cycleResource = cycleResource;
     }
 }
