@@ -6,6 +6,8 @@ public class Car {
     private String model;
     private String colort;
     private Engine engine = new Engine();
+    private GasTank gasTank = new GasTank();
+
     private int mileage = 100;
     private GasTank volumeGasTank = new GasTank();
 

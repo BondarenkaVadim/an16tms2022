@@ -1,11 +1,18 @@
 public class Person {
     private String name;
     private int age;
-    private String sex;
+    private Sex sex;
     private Address adress;
 
     public Person() {
 
+    }
+
+    public Person(String name, int age, Sex sex, Address adress) {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+        this.adress = adress;
     }
 
     public String getName() {
@@ -24,11 +31,11 @@ public class Person {
         this.age = age;
     }
 
-    public String getSex() {
+    public Sex getSex() {
         return sex;
     }
 
-    public void setSex(String sex) {
+    public void setSex(Sex sex) {
         this.sex = sex;
     }
 
@@ -40,7 +47,7 @@ public class Person {
         this.adress = adress;
     }
 
-    public Person(String name, int age, String sex, Address adress) {
+    public Person(String name, int age, Sex sex, Address adress) {
         this.name = name;
         this.age = age;
         this.sex = sex;

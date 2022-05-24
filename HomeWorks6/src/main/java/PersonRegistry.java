@@ -15,4 +15,18 @@ public class PersonRegistry {
         this.people = people;
     }
 
+    public Person[] getRecruits() {
+        Person[] recruits = new Person[people.length];
+        for (int i = 0; i < people.length; i++) {
+            Person person = people[i];
+
+            if (person.getAge() > 18 && person.getAge() < 27 && person.getSex().equals("Men")) {
+                recruits[i] = person;
+            }
+
+        }
+        return recruits;
+    }
 }
+
+

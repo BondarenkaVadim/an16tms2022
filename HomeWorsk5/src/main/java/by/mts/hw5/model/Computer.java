@@ -8,6 +8,8 @@ public class Computer {
     private String ram;
     private String ssd;
     private int cycleResource;
+    private Scanner console = new Scanner(System.in);
+    private Random random = new Random();
 
     @Override
     public String toString() {
@@ -20,13 +22,13 @@ public class Computer {
     }
 
     public void on() {
-
+//разбить на мелкие методы, 1 метод одно действие
         int i = 0;
         System.out.println("Warrning!!! Please enter 0 or 1");
-        Scanner console = new Scanner(System.in);
+     //   Scanner console = new Scanner(System.in); //вынести в глобальные переменные
         int enterNamber = console.nextInt();
-        Random random = new Random();
-        if (enterNamber == random.nextInt(1)) {
+       // Random random = new Random(); //вынести в глобальные переменные
+        if (enterNamber == random.nextInt(2)) {
             System.out.println("Computer off");
         } else {
             System.out.println("Computer destroyed");
@@ -64,5 +66,8 @@ public class Computer {
 
     public void setCycleResource(int cycleResource) {
         this.cycleResource = cycleResource;
+    }
+    public void info(){
+        System.out.println("процессор" + cpu + " оперативка " + ram);
     }
 }

@@ -8,14 +8,14 @@ public class Engine {
     public Engine(String typeEngine) {
         this.typeEngine = typeEngine;
     }
-
+    
     public Engine() {
         this.typeEngine = typeEngine;
     }
 
     public boolean start(int amountOfGas) {
 
-        boolean engineStart = false;
+        boolean engineStart; // при создании и так false
         if (amountOfGas > 0) {
             System.out.println("Engine on!!");
             engineStart = true;
