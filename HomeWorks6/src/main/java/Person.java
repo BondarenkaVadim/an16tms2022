@@ -1,19 +1,16 @@
+
+import lombok.*;
+
+@NoArgsConstructor // конструктор без параметров
+@AllArgsConstructor // конструктор со всеми параметрами
 public class Person {
     private String name;
     private int age;
     private Sex sex;
     private Address adress;
 
-    public Person() {
 
-    }
 
-    public Person(String name, int age, Sex sex, Address adress) {
-        this.name = name;
-        this.age = age;
-        this.sex = sex;
-        this.adress = adress;
-    }
 
     public String getName() {
         return name;
@@ -47,13 +44,7 @@ public class Person {
         this.adress = adress;
     }
 
-    public Person(String name, int age, Sex sex, Address adress) {
-        this.name = name;
-        this.age = age;
-        this.sex = sex;
-        this.adress = adress;
 
-    }
 
     @Override
     public String toString() {
