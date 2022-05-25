@@ -10,8 +10,8 @@ public class HomeWorks4 {
         //zodiacSign();
         //dinamicArray();
         //consoleOperation();
-        //printPrimeNumbers();
-        countDevs();
+        printPrimeNumbers();
+        //countDevs();
 
 
     }
@@ -19,8 +19,8 @@ public class HomeWorks4 {
     public static void countDevs() {
         Scanner console = new Scanner(System.in);
         int namber = console.nextInt();
-        int rez = namber % 10;
-        if (rez == 0 || (rez >= 5 && rez <= 9)) {
+        int rez = namber % 10; // дописать логику с 11
+        if (rez == 0 || (rez >= 5 && rez <= 9)||(rez == 11)||(namber==11)) {
             System.out.println(namber + " Programmistov");
         } else {
             if ((rez > 1) && (rez < 5)) {

@@ -2,51 +2,30 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
+        Person[] arrayPeople = new Person[3];
 
-        //PersonRegistry[] arrayPeople = new PersonRegistry[5];
-
-        Person peopleVadim = new Person();
-        peopleVadim.setName("Vadim");
-        peopleVadim.setAge(33);
-        peopleVadim.setSex("Men");
-        Address addressVadim = new Address("Bel", "Minsk");
-        peopleVadim.setAdress(addressVadim);
-
-
-        Person peopleDima = new Person();
-        peopleDima.setName("Dmitrii");
-        peopleDima.setAge(37);
-        peopleDima.setSex("Men");
-        Address addressDima = new Address("Bel", "Minsk");
-        peopleDima.setAdress(addressDima);
-
-        Person peopleLiza = new Person();
-        peopleLiza.setName("Liza");
-        peopleLiza.setAge(32);
-        peopleLiza.setSex("Girl");
-        Address addressLiza = new Address("Bel", "Pinsk");
-        peopleLiza.setAdress(addressLiza);
-        System.out.println(addressLiza);
-
-        Person[] arrayPerson = {peopleVadim, peopleDima, peopleLiza};
-        System.out.println("-------------");
-        System.out.println(Arrays.toString(arrayPerson));
-        System.out.println(arrayPerson[0].getName());
-
-        PersonRegistry pr = new PersonRegistry(arrayPerson);
-
-        MilitaryOffice mo = new MilitaryOffice(pr);
-
-        System.out.println("%%%%%%%%%%%%");
-        System.out.println(mo.findCountPersonByName("Liza"));  // количество людей с именем Лиза
-        System.out.println(mo.findCountPersonByCity("Minsk"));
+        {
+            Person people = new Person("VADIM", 10, Sex.FEMEN, new Address("Bel", "Pinsk"));
+            arrayPeople[0] = people;
+        }
+        {
+            Person people = new Person("VADIM", 20, Sex.MEN, new Address("Bel", "Minsk"));
+            arrayPeople[1] = people;
+        }
+        {
+            Person people = new Person("VADIM", 33, Sex.MEN, new Address("BLR", "Grodno"));
+            arrayPeople[2] = people;
+        }
 
 
+        PersonRegistry personRegistry = new PersonRegistry(arrayPeople);
+        MilitaryOffice militaryOffice = new MilitaryOffice(personRegistry);
+        System.out.println("^^^^^^^^^^^^^^");
+        System.out.println(Arrays.toString(personRegistry.getRecruits()));
+        System.out.println(militaryOffice.findCountsPersonByAge(25, 30));
+        System.out.println(militaryOffice.findCountPersonByName("VADIM"));
+        System.out.println(militaryOffice.findCountPersonByCity("Minsk"));
+        System.out.println("^^^^^^^^^^^^^^");
 
-
-        //PersonRegistry pr = new PersonRegistry();
-        //System.out.println(pr.person2.getName());
-//PersonRegistry pr  = new PersonRegistry();
-//pr.setPeople("Aler", 18, "Men", "BLR", "Mbyc");
     }
 }

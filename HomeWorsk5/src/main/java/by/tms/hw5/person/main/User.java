@@ -66,10 +66,19 @@ public class User {
 
 
     @Deprecated
-    public void fullLastName() {   // изменениие имени на польное
+    /*public void fullLastName() {   // изменениие имени на польное
         if (this.lastName.equals("Dima")) {
             this.lastName = "Dmitii";
         }
+    }*/
+    public String fullLastName() {   // изменениие имени на польное
+        if ( this.lastName.equals("Dima")) {
+            this.lastName = "Dmitii";
+        }
+        return this.lastName;
+    }
+    public String getFirstLastName(){
+        return firstName + " " + lastName;
     }
 
     public void increaseAge() {   // увеличение возраста на 1

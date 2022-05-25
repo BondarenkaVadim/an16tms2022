@@ -12,7 +12,7 @@ public class GasTank {
     public GasTank() {
 
     }
-
+// реализовать чек оил, если чек оил тру работаем, если офф нет
     public int getVolumeGasTank() {
         return volumeGasTank;
     }
