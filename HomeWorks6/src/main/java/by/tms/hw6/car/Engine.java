@@ -2,28 +2,19 @@ package by.tms.hw6.car;
 
 public class Engine {
 
-    public String typeEngine;
-    private int fuelConsumption = 10;  //расход на 100 км.
+    private String typeEngine;
+    private int fuelConsumption;  //расход на 100 км.
 
     public Engine(String typeEngine) {
         this.typeEngine = typeEngine;
     }
-    
     public Engine() {
         this.typeEngine = typeEngine;
     }
 
-    public boolean start(int amountOfGas) {
-
-        boolean engineStart; // при создании и так false
-        if (amountOfGas > 0) {
-            System.out.println("Engine on!!");
-            engineStart = true;
-        } else {
-            System.out.println("Engine off, Gass off");
-            engineStart = false;
-        }
-        return engineStart;
+    public Engine(String typeEngine, int fuelConsumption) {
+        this.typeEngine = typeEngine;
+        this.fuelConsumption = fuelConsumption;
     }
 
     public int getFuelConsumption() {
