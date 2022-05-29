@@ -7,19 +7,54 @@ public class Car {
     private String colort;
     private Engine engine = new Engine();
     private GasTank gasTank = new GasTank();
+    private boolean engineStart;
 
     private int mileage = 100;
-    private GasTank volumeGasTank = new GasTank();
+    //  private GasTank volumeGasTank = new GasTank();
 
-    public int distans(boolean engineStart, int amountOfGas) {
+    public Car(String model, String colort, Engine engine, GasTank gasTank) {
+        this.model = model;
+        this.colort = colort;
+        this.engine = engine;
+        this.gasTank = gasTank;
+        this.mileage = mileage;
+    }
+
+    public Car() {
+
+    }
+
+    public Car(GasTank gasTank) {
+        this.gasTank = gasTank;
+    }
+
+    public int distans() {
         Random random = new Random();
         int distans = 0;
-        if (engineStart == true) {
-            distans = random.nextInt(amountOfGas * 100 / engine.getFuelConsumption()); // проедет, но не более чем хватит отплава
+        if (this.engineStart) {
+            distans = random.nextInt(gasTank.getAmountOfGas() * 100 / engine.getFuelConsumption()); // проедет, но не более чем хватит отплава
             this.mileage = this.mileage + distans;
+
+        } else {
+            System.out.println("engine not running");
         }
+
+
+
         return distans;
     }
+
+    public void startEngine() {
+        //     boolean engineStart;
+        if (gasTank.getAmountOfGas() > 0) {
+            System.out.println("Engine on!!");
+            this.engineStart = true;
+        } else {
+            System.out.println("Engine off, Gass off");
+            this.engineStart = false;
+        }
+    }
+
 
     public int getMileage() {
         return mileage;
