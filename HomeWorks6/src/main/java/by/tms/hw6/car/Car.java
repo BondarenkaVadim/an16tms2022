@@ -5,8 +5,8 @@ import java.util.Random;
 public class Car {
     private String model;
     private String colort;
-    private Engine engine = new Engine();
-    private GasTank gasTank = new GasTank();
+    private Engine engine;
+    private GasTank gasTank;
     private boolean engineStart;
 
     private int mileage = 100;
