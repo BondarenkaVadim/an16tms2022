@@ -1,7 +1,7 @@
 import javax.xml.namespace.QName;
 
 public class Cow extends Animal {
-    final String speak = "mu";
+    final private String speak = "mu";
 
     public Cow(String name) {
         super(name);

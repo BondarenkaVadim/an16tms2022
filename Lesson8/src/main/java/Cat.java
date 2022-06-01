@@ -1,5 +1,5 @@
 public class Cat extends Animal{
-    final String speak = "mi";
+    final private String speak = "mi";
 
     public Cat(String name) {
         super(name);
