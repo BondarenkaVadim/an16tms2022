@@ -5,26 +5,31 @@ import java.util.Random;
 public class Car {
     private String model;
     private String colort;
-    private Engine engine;
+    private final Engine engine;
     private GasTank gasTank;
     private boolean engineStart;
 
     private int mileage = 100;
     //  private GasTank volumeGasTank = new GasTank();
 
+//    public Car(String model, String colort, Engine engine, GasTank gasTank) {
+//        this.model = model;
+//        this.colort = colort;
+//        this.engine = engine;
+//        this.gasTank = gasTank;
+//        this.mileage = mileage;
+//    }
+
+
     public Car(String model, String colort, Engine engine, GasTank gasTank) {
         this.model = model;
         this.colort = colort;
         this.engine = engine;
         this.gasTank = gasTank;
-        this.mileage = mileage;
     }
 
-    public Car() {
-
-    }
-
-    public Car(GasTank gasTank) {
+    public Car(Engine engine, GasTank gasTank) {
+        this.engine = engine;
         this.gasTank = gasTank;
     }
 

@@ -12,10 +12,11 @@ public class FreightCar extends Ground {
 
     @Override
     public String info() {
-        return super.info()   +" LoadCapacity: "+ loadCapacity;
+        return super.info() + " LoadCapacity: " + loadCapacity;
     }
-    public void capacity(int cargo){
-        if (loadCapacity > cargo){
+
+    public void capacity(int cargo) {
+        if (loadCapacity > cargo) {
             System.out.println("Truck loaded");
         } else {
             System.out.println("You need a bigger truck");
