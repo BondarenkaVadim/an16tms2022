@@ -6,12 +6,12 @@ import lombok.*;
 @AllArgsConstructor // конструктор со всеми параметрами
 @ToString // toString
 
-abstract  class Ground extends Transport{
+abstract class Ground extends Transport {
     private int wheelCount;
     private int fuelConsumption;
 
     @Override
     public String info() {
-        return super.info()   +" WheelCount: "+ wheelCount   +" FuelConsumption: "+ fuelConsumption;
+        return super.info() + " WheelCount: " + wheelCount + " FuelConsumption: " + fuelConsumption;
     }
 }
