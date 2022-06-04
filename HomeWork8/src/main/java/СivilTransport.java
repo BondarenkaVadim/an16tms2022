@@ -15,8 +15,8 @@ public class СivilTransport extends Air {
         return super.info() + " numberOfPassengers: " + numberOfPassengers + " businessClass: " + businessClass;
     }
 
-    public void loadPassengers(int Passengers) {
-        if (numberOfPassengers > Passengers) {
+    public void loadPassengers(int passengers) {
+        if (numberOfPassengers > passengers) {
             System.out.println("The plane is loaded");
         } else {
             System.out.println("You need a bigger plane");
