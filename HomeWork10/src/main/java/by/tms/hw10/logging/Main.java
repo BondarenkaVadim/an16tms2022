@@ -5,7 +5,7 @@ import by.tms.hw10.logging.Logging;
 public class Main {
     public static void main(String[] args) throws WrongLoginException, WrongPasswordException {
 
-        checkAuthorization("Vadim_1", "1234a", "1234a");
+        checkAuthorization("Vadim1_", "1234a", "1234a");
     }
 
     private static void checkAuthorization(String login, String password, String confirmPassword) throws WrongPasswordException, WrongLoginException {
