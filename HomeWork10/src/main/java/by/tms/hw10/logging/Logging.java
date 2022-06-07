@@ -18,13 +18,13 @@ public class Logging {
         }
     }
 
-    public static void passwordСheck(String password, String confirmPassword) throws WrongLoginException {
+    public static void passwordСheck(String password, String confirmPassword) throws WrongPasswordException {
 
 
         if ((password.length() > 3) && password.matches("^[a-zA-Z0-9_]+$") && password.equals(confirmPassword)) {
-            throw new WrongLoginException("Password entered correctly");
+            throw new WrongPasswordException("Password entered correctly");
         } else {
-            throw new WrongLoginException("Password entered incorrectly");
+            throw new WrongPasswordException("Password entered incorrectly");
         }
 
 

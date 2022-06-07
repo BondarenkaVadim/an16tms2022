@@ -3,10 +3,9 @@ package by.tms.hw10.logging;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
-public class WrongLoginException extends Exception {
-
-
-    public WrongLoginException(String message) {
+public class WrongPasswordException extends Exception{
+    public WrongPasswordException(String message) {
         super(message);
     }
+
 }
