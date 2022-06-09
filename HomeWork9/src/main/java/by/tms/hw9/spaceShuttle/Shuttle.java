@@ -7,13 +7,10 @@ public class Shuttle implements IStart {
     public boolean prelaunchСheck() {
         Random random = new Random();
         int x = random.nextInt(11);
-        if (x > 3) {
-            System.out.println(x);
-            return true;
-        } else {
-            System.out.println(x);
-            return false;
-        }
+
+        System.out.println(x);
+        return x > 3;
+
     }
 
     @Override
