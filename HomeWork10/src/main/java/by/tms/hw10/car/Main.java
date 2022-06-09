@@ -1,7 +1,7 @@
 package by.tms.hw10.car;
 
 public class Main {
-    public static void main(String[] args) throws CustomCarException, Exception {
+    public static void main(String[] args) {
         {
             Car car = new Car();
             car.setBrand("Audi");
