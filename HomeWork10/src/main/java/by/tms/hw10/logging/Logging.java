@@ -1,32 +1,47 @@
 package by.tms.hw10.logging;
 
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
 public class Logging {
 
+    public static void checkAuth(String login, String password, String confirmPassword) throws WrongLoginException, WrongPasswordException {
 
-    public static void loginСheck(String login) throws WrongLoginException {
-
-        System.out.println(login);
-        if ((login.length() > 3) && login.matches("\\w+$")) {   //"^[a-zA-Z0-9_]+$"
-            throw new WrongLoginException("Login entered correctly");
-        } else {
-            throw new WrongLoginException("Login entered incorrectly");
+        if (loginСheck(login) && passwordСheck(password, confirmPassword)) {
+            System.out.println("Authorization completed successfully");
         }
+
+
     }
 
-    public static void passwordСheck(String password, String confirmPassword) throws WrongPasswordException {
+
+    private static Boolean loginСheck(String login) throws WrongLoginException {
+        boolean result = false;
 
 
-        if ((password.length() > 3) && password.matches("\\w+$") && password.equals(confirmPassword)) {
-            throw new WrongPasswordException("Password entered correctly");
+        if ((login.length() > 3) && login.matches("\\w+")) {   //"^[a-zA-Z0-9_]+$"
+            System.out.println("Login entered correctly");
+            result = true;
         } else {
+            result = false;
+            throw new WrongLoginException("Login entered incorrectly");
+        }
+        return result;
+    }
+
+    private static Boolean passwordСheck(String password, String confirmPassword) throws WrongPasswordException {
+        boolean result = false;
+        if ((password.length() > 3) && password.matches("\\w+")) {
+            if (password.equals(confirmPassword)) {
+                System.out.println("Password entered correctly");
+                result = true;
+            } else {
+                result = false;
+                throw new WrongPasswordException("Passwords do not match");
+            }
+
+        } else {
+            result = false;
             throw new WrongPasswordException("Password entered incorrectly");
         }
-
-
+        return result;
     }
 }
