@@ -14,7 +14,6 @@ public class Main {
 
         String[] strArray = {"brat", "zakaz", "kazak", "ded", "minsk", "mama"};
 
-
         System.out.println(str);
         System.out.println(strResult1);
         System.out.println(strResult2);
@@ -37,7 +36,7 @@ public class Main {
 
         //задание 4
         String text = "Priver. Eto testovii text. On sluzit tolko dly proverki togo cto poluchilos. I ne bolee togo kaktotak. Prosila Kazak";
-        String[] sentences = text.split("[\\.\\!\\?]");
+        String[] sentences = text.split("[.!?]");
         for (int i = 0; i < sentences.length; i++) {
             sentences[i] = sentences[i].trim();
             if (((countWord(sentences[i]) >= 3) && (countWord(sentences[i]) <= 5)) || searchPalindrome(sentences[i]))
@@ -92,9 +91,8 @@ public class Main {
     }
 
     private static int countWord(String sentences) {
-        int count = 0;
-        count = sentences.split(" ").length;
-        return count;
+
+        return sentences.split(" ").length;
     }
 
 
