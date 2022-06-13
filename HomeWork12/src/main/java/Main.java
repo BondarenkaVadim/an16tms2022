@@ -25,6 +25,7 @@ public class Main {
                 stringBuilder.append(line); // добавить разделитель
                 stringBuilder.append("\n");
             }
+
         }
         return stringBuilder.toString();
     }
