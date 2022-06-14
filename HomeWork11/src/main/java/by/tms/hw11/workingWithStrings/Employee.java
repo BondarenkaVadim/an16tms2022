@@ -11,9 +11,7 @@ public class Employee implements Report {
     private String fullname;
     private double salary;
 
-    private static String finalName;
-
-    private String fio(String fullname) {
+    private String fio() {
 
         String[] search = fullname.split("[\\ ]");
         String name = "";
@@ -25,7 +23,7 @@ public class Employee implements Report {
 
     @Override
     public void generateReport() {
-        System.out.printf("| %-20s | %10.2f %n", fio(fullname), salary);
+        System.out.printf("| %-20s | %10.2f %n", fio(), salary);
 
     }
 }
