@@ -7,21 +7,21 @@ import java.util.regex.Pattern;
 public class Main {
     public static void main(String[] args) {
 
-        //2 Р·Р°РґР°РЅРёРµ_____________________
+        //2 задание_____________________
         {
             String str = "cab, ccab, cccab";
-            // РЅРѕ РІРѕС‚ С‚Р°Рє СЃРѕ split РїСЂРѕС‰Рµ )))
+            // но вот так со split проще )))
             // System.out.println(Arrays.toString(str.split(", ")));
 
-            Pattern pattern = Pattern.compile("c+ab+");
+            Pattern pattern = Pattern.compile("c+ab");
             Matcher matcher = pattern.matcher(str);
             while (matcher.find()) {
                 System.out.println(str.substring(matcher.start(), matcher.end()));
             }
 
         }
-        //3 Р·Р°РґР°РЅРёРµ_______________________
-        //* 3) Р”Р°РЅР° СЃС‚СЂРѕРєР° "Versions:Java1, Java  5, Java 6, Java   7, Java 8, Java 12."  РќР°Р№С‚Рё РІСЃРµ РїРѕРґСЃС‚СЂРѕРєРё "Java X", РіРґРµ X - С‡РёСЃР»Рѕ Рё СЂР°СЃРїРµС‡Р°С‚Р°С‚СЊ РёС….
+        //3 задание_______________________
+        //* 3) Дана строка "Versions:Java1, Java  5, Java 6, Java   7, Java 8, Java 12."  Найти все подстроки "Java X", где X - число и распечатать их.
         {
             //Java (\d)
             String str = "Versions:Java1 Java  5, Java 6, Java   7, Java 8, Java 12.";
@@ -31,14 +31,14 @@ public class Main {
                 System.out.println(matcher.group());
         }
 
-        //4 Р·Р°РґР°РЅРЅРёРµ
+        //4 заданние
         {
-            String str = "One two three СЂР°Р· РґРІР° С‚СЂРё one1 two2 123 ";
-            System.out.println(str.split("[ Рђ-РЇР°-СЏ0-9]+|([A-Za-z]*[0-9]+)").length);//
+            String str = "One two three раз два три one1 two2 123 ";
+            System.out.println(str.split("[ А-Яа-я0-9]+|([A-Za-z]*[0-9]+)").length);//
 
         }
         System.out.println("Task 5");
-        System.out.println(validate("o1ne two three")); // РґРѕР±Р°РІРёР» РµС‰Рµ РїСЂРѕР±РµР», РґР»СЏ РЅР°РіР»СЏРґРЅРѕСЃС‚Рё
+        System.out.println(validate("o1ne two three")); // добавил еще пробел, для наглядности
 
     }
 
