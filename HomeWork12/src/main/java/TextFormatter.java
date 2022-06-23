@@ -7,7 +7,7 @@ public class TextFormatter {
     public static boolean checkPalindrome(String str) {
 
         boolean resulst = false;
-        String[] search = str.split("[\\ ]");
+        String[] search = str.split(" ");
         for (int i = 0; i < search.length; i++) {
             search[i] = search[i].toLowerCase();
             StringBuilder sBarr = new StringBuilder(search[i]);
