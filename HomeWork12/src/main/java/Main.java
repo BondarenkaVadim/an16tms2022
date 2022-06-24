@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.lang.reflect.Array;
 import java.nio.charset.StandardCharsets;
@@ -6,13 +7,14 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Main {
-    public static final String INPUT_FILE_HW1 = "c:/works/TeachMeSkills/an16tms2022/HomeWork12/src/main/java/by/tms/hw12/hw1/input.txt";
-    public static final String OUTPUT_FILE_HW1 = "c:/works/TeachMeSkills/an16tms2022/HomeWork12/src/main/java/by/tms/hw12/hw1/output.txt";
-    public static final String OUTPUT_FILE_HW2 = "c:/works/TeachMeSkills/an16tms2022/HomeWork12/src/main/java/by/tms/hw12/hw2/output.txt";
-    public static final String INPUT_FILE_HW2 = "c:/works/TeachMeSkills/an16tms2022/HomeWork12/src/main/java/by/tms/hw12/hw2/input.txt";
 
-    public static final String INPUT_FILE_HW3 = "c:/works/TeachMeSkills/an16tms2022/HomeWork12/src/main/java/by/tms/hw12/hw3/input.txt";
-    public static final String INPUT_FILE_BLACK_LIST = "c:/works/TeachMeSkills/an16tms2022/HomeWork12/src/main/java/by/tms/hw12/hw3/blackList.txt";
+    public static final String INPUT_FILE_HW1 = "HomeWork12/src/main/java/by/tms/hw12/hw1/input.txt";
+    public static final String OUTPUT_FILE_HW1 = "HomeWork12/src/main/java/by/tms/hw12/hw1/output.txt";
+    public static final String OUTPUT_FILE_HW2 = "HomeWork12/src/main/java/by/tms/hw12/hw2/output.txt";
+    public static final String INPUT_FILE_HW2 = "HomeWork12/src/main/java/by/tms/hw12/hw2/input.txt";
+
+    public static final String INPUT_FILE_HW3 = "HomeWork12/src/main/java/by/tms/hw12/hw3/input.txt";
+    public static final String INPUT_FILE_BLACK_LIST = "HomeWork12/src/main/java/by/tms/hw12/hw3/blackList.txt";
 
     public static void main(String[] args) throws IOException {
 
@@ -23,7 +25,6 @@ public class Main {
         StringBuilder stringBuilder = new StringBuilder(readUsingBufferedReader_HW2());
 //        System.out.println(stringBuilder);
 
-        //запись в файл
         writer(OUTPUT_FILE_HW1, contents);
         writer(OUTPUT_FILE_HW2, stringBuilder);
 
@@ -34,17 +35,25 @@ public class Main {
         String[] arrayBlackList = blackList.toString().split("\n");
         String[] arrayText = text.toString().split("\n");
         int count = 0;
+        boolean coincidence = false;
         for (int i = 0; i < arrayText.length; i++) {
             for (int j = 0; j < arrayBlackList.length; j++) {
                 if (arrayText[i].contains(arrayBlackList[j])) {
-                    count++;
-                    System.out.println(arrayText[i]);
-                }else {
-                    System.out.println("Sentence Chek ON");
+                    coincidence = true;
+                    break;
+                } else {
+                    coincidence = false;
                 }
             }
-
-
+            if (coincidence) {
+                count++;
+                System.out.println(arrayText[i]);
+            } else {
+                System.out.println("Sentence Chek ON");
+            }
+        }
+        if (count > 0) {
+            System.out.println("ГђВљГђВѕГђВ»ГђВёГ‘В‡ГђВµГ‘ВЃГ‘В‚ГђВІГђВѕ ГђВїГ‘ВЂГђВµГђВґГђВ»ГђВѕГђВ¶ГђВµГђВЅГђВёГђВ№ ГђВЅГђВµ ГђВїГ‘ВЂГђВѕГ‘В€ГђВµГђВґГ‘В€ГђВёГ‘В… ГђВїГ‘ВЂГђВѕГђВІГђВµГ‘ВЂГђВєГ‘Вѓ: " + count);
         }
 
     }
@@ -59,7 +68,6 @@ public class Main {
     }
 
 
-    // считываем содержимое файла в String с помощью BufferedReader
     private static String readUsingBufferedReader() throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(INPUT_FILE_HW1));
         String line = null;
@@ -68,7 +76,7 @@ public class Main {
         while ((line = reader.readLine()) != null) {
             StringBuilder sBarr = new StringBuilder(line);
             if (line.equals(sBarr.reverse().toString())) {
-                stringBuilder.append(line); // добавить разделитель
+                stringBuilder.append(line); 
                 stringBuilder.append("\n");
             }
 
@@ -77,7 +85,6 @@ public class Main {
     }
 
 
-    //правильнее сделать для обоих заданиях отдельно метод для чтения, и к обеим заданиям его вызвать и проверять
     private static String readUsingBufferedReader_HW2() throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(INPUT_FILE_HW2));
         String line = null;
@@ -103,11 +110,9 @@ public class Main {
         String line = null;
         StringBuilder stringBuilder = new StringBuilder();
         while ((line = reader.readLine()) != null) {
-            stringBuilder.append(line); // добавить разделитель
+            stringBuilder.append(line); //
             stringBuilder.append("\n");
         }
         return stringBuilder;
     }
-
-
 }

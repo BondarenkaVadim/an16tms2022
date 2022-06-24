@@ -12,7 +12,7 @@ public class Main {
         String strResult1 = str.substring(str.indexOf('A'), str.lastIndexOf('B') + 1);
         String strResult2 = str.replace(str.charAt(0), str.charAt(3));
 
-        String[] strArray = {"brat", "zakaz", "kazak", "ded", "minsk", "mama"};
+        String[] strArray = {"brat", "zakaz", "kazak", "ded", "minsk", "маам"};
 
         System.out.println(str);
         System.out.println(strResult1);
