@@ -7,6 +7,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Main {
+
     public static final String INPUT_FILE_HW1 = "HomeWork12/src/main/java/by/tms/hw12/hw1/input.txt";
     public static final String OUTPUT_FILE_HW1 = "HomeWork12/src/main/java/by/tms/hw12/hw1/output.txt";
     public static final String OUTPUT_FILE_HW2 = "HomeWork12/src/main/java/by/tms/hw12/hw2/output.txt";
@@ -24,7 +25,6 @@ public class Main {
         StringBuilder stringBuilder = new StringBuilder(readUsingBufferedReader_HW2());
 //        System.out.println(stringBuilder);
 
-        //запись в файл
         writer(OUTPUT_FILE_HW1, contents);
         writer(OUTPUT_FILE_HW2, stringBuilder);
 
@@ -53,7 +53,7 @@ public class Main {
             }
         }
         if (count > 0) {
-            System.out.println("Количество предложений не прошедших проверку: " + count);
+            System.out.println("ÐÐ¾Ð»Ð¸ÑÐµÑÑÐ²Ð¾ Ð¿ÑÐµÐ´Ð»Ð¾Ð¶ÐµÐ½Ð¸Ð¹ Ð½Ðµ Ð¿ÑÐ¾ÑÐµÐ´ÑÐ¸Ñ Ð¿ÑÐ¾Ð²ÐµÑÐºÑ: " + count);
         }
 
     }
@@ -68,7 +68,6 @@ public class Main {
     }
 
 
-    // ñ÷èòûâàåì ñîäåðæèìîå ôàéëà â String ñ ïîìîùüþ BufferedReader
     private static String readUsingBufferedReader() throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(INPUT_FILE_HW1));
         String line = null;
@@ -77,7 +76,7 @@ public class Main {
         while ((line = reader.readLine()) != null) {
             StringBuilder sBarr = new StringBuilder(line);
             if (line.equals(sBarr.reverse().toString())) {
-                stringBuilder.append(line); // äîáàâèòü ðàçäåëèòåëü
+                stringBuilder.append(line); 
                 stringBuilder.append("\n");
             }
 
@@ -86,7 +85,6 @@ public class Main {
     }
 
 
-    //ïðàâèëüíåå ñäåëàòü äëÿ îáîèõ çàäàíèÿõ îòäåëüíî ìåòîä äëÿ ÷òåíèÿ, è ê îáåèì çàäàíèÿì åãî âûçâàòü è ïðîâåðÿòü
     private static String readUsingBufferedReader_HW2() throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(INPUT_FILE_HW2));
         String line = null;
